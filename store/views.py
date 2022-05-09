@@ -17,7 +17,7 @@ def checkout(request):
     pass
 
 def about(request):
-    pass
+    return render(request, 'about.html')
 
 def login_register(request):
     pass

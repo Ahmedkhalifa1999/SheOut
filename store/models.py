@@ -30,7 +30,7 @@ class customer(models.Model):
 
 # Table represnting cart items (to store user carts)
 class cart_item(models.Model):
-    customer = models.ForeignKey('customre', on_delete = models.CASCADE)
+    customer = models.ForeignKey('customer', on_delete = models.CASCADE)
     item = models.ForeignKey('item', on_delete = models.RESTRICT)
     quantity = models.PositiveIntegerField()
 
