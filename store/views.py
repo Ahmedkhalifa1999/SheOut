@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import redirect, render
+from django.http import HttpRequest, HttpResponse
 
 def index(request):
     pass
@@ -22,9 +22,8 @@ def about(request):
 def login_register(request):
     pass
 
-def base(request):
-    pass
-
-
-# client data ( register user , authenticate user , get personal data)
-# product data ( add item to cart , checkout , get cart )
+def base(request: HttpRequest):
+    if (request.user.is_authenticated()):
+        redirect('index/')
+    else:
+        redirect('login_register')
