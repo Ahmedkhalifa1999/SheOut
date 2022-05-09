@@ -904,7 +904,9 @@
      -webkit-transform: translate3d(0,0,0);
      transform: translate3d(0,0,0);
 }
- .shop-cat-box a{
+ .shop-cat-box button{
+   background-color: #d33b33;
+   color: white;
      position: absolute;
      z-index: 2;
      bottom: 0px;
@@ -913,7 +915,6 @@
      margin: 0 auto;
      text-align: center;
      border: none;
-     color: #ffffff;
      font-size: 18px;
      font-weight: 700;
      padding: 8px 0px;
