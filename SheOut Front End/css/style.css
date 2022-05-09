@@ -1022,7 +1022,7 @@
      padding: 5px 10px;
      display: block;
 }
- .mask-icon a.cart{
+ .mask-icon button.cart{
      background: #d33b33;
      position: absolute;
      bottom: 0;
@@ -1031,11 +1031,11 @@
      font-weight: 700;
      color: #ffffff;
 }
- .mask-icon a.cart:hover{
+ .mask-icon button.cart:hover{
      background: #010101;
      color: #ffffff;
 }
- .mask-icon ul li a:hover{
+ .mask-icon ul li button:hover{
      background: #010101;
      color: #ffffff;
 }
