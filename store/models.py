@@ -36,7 +36,8 @@ class cart_item(models.Model):
 
     def __str__(self):
         return ""
-
+        
+# anhy item alee gwa el order 
 # Table specifying order fragements 
 class orderling(models.Model):
     main_order = models.ForeignKey('order', on_delete = models.CASCADE)
