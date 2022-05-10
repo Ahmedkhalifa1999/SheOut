@@ -15,7 +15,8 @@ class item:
 takes a filter_parameters object and returns list of items matching filter criteria
 """
 def search(parameters: filter_parameters) -> list:
-    pass
+    items = []
+    models.item.objects.filter(name=parameters.name)
 
 """
 takes item ID and returns object of type item corresponding to passed item ID
