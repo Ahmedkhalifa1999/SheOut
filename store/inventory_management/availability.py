@@ -6,7 +6,7 @@ class order_item:
 
 """
 takes a list or order_item and checks whether the items are avialable in specified quantity 
-and returns true or false accordingly
+and returns true or false accordingly, ALSO REMOVES CART FROM DATABASE
 """
 def available(order: list) -> bool:
     pass
