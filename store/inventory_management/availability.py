@@ -5,8 +5,19 @@ class order_item:
     quantity = 0
 
 """
-takes a list or order_item and checks whether the items are avialable in specified quantity 
+takes a list or order_item and checks whether the items are avialable in specified quantity
 and returns true or false accordingly, ALSO REMOVES CART FROM DATABASE
 """
 def available(order: list) -> bool:
-    pass
+    obj = order_item()
+    for item in order:
+        qnt = models.item.objects.filter(id=item.id)[0]['quantity']
+        if item.quantity > qnt:
+            return False
+
+    ## updating db
+
+    ##msh 3arfen n update the database
+    for item in order:
+        models.item.objects.filter(id=item.id)[0]['quantity'] - item.quantity
+    return True
