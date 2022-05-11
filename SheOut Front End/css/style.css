@@ -473,7 +473,8 @@
          top: -2px;
     }
      nav.navbar .navbar-brand img.logo{
-         width: 160px;
+         width: 130px;
+         height: 55px;
     }
      .attr-nav > ul > li > a{
          padding: 16px 15px 15px;
@@ -1966,7 +1967,7 @@
  .coupon-box .input-group .input-group-append .btn-theme:hover {
      background: #d33b33;
 }
- .update-box input[type="submit"]{
+ .update-box a{
      background: #010101;
      border: medium none;
      border-radius: 0;
@@ -1981,6 +1982,7 @@
      height: 50px;
      line-height: 40px;
      margin-right: 15px;
+     margin-left: 150px;
      padding: 0 20px;
      text-shadow: none;
      text-transform: uppercase;
@@ -1989,7 +1991,7 @@
      white-space: nowrap;
      width: inherit;
 }
- .update-box input[type="submit"]:hover{
+ .update-box a{
      background: #d33b33;
 }
  .order-box h3{
@@ -2021,7 +2023,7 @@
  .my-account-box-main{
      padding: 70px 0px;
 }
- .shopping-box a{
+ .shopping-box a {
      font-size: 18px;
      color: #ffffff;
      border: none;

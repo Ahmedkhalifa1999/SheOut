@@ -35,9 +35,58 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
             <div class="container">
                 <!-- Start Header Navigation -->
-                <a class="navbar-brand" href="index.html"><img style="width: 130px; height: 55px;" src="images/LOGO/Capture2.jpg" class="logo" alt=""></a>
-
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                    <a class="navbar-brand" href="index.html"><img style="width: 130px; height: 55px;" src="images/logo.png" class="logo" alt=""></a>
                 </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="navbar1">
+                  <a href="index.html">Home</a>
+                  <a href="about.html">About us</a>
+                  <div class="dropdown">
+                    <button class="dropbtn">Products
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="shop.html">Shirts</a>
+                      <a href="shop.html">Jeans</a>
+                      <a href="shop.html">Footwear</a>
+                      <a href="shop.html">Accessories</a>
+                      <a href="shop.html">Bags</a>
+                    </div>
+                  </div>
+                  <div class="dropdown">
+                    <button class="dropbtn">SHOP
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="cart.html">Cart</a>
+
+                    </div>
+                  </div>
+                </div>
+                <!-- /.navbar-collapse -->
+
+                <!-- Start Atribute Navigation -->
+                <div class="attr-nav">
+                    <ul>
+                        <li class="searchtext"><a href="#"><input type="search" id="site-search" name="q"/></a></li>
+                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        <li class="side-menu"><a href="cart.html">
+						<i class="fa fa-shopping-bag"></i>
+
+					</a></li>
+                    </ul>
+                </div>
+                <!-- End Atribute Navigation -->
+            </div>
+            <!-- Start Side Menu -->
+
+            <!-- End Side Menu -->
         </nav>
         <!-- End Navigation -->
     </header>
@@ -130,41 +179,26 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row my-5">
-
-                <div class="col-lg-6 col-sm-6">
-                    <div class="update-box">
-                        <input value="Update Cart" type="submit">
-                    </div>
-                </div>
-            </div>
-
             <div class="row my-5">
                 <div class="col-lg-8 col-sm-12"></div>
-                <div class="col-lg-4 col-sm-12">
-                    <div class="order-box">
-                        <h3>Order summary</h3>
-                        <div class="d-flex">
-                            <h4>Sub Total</h4>
-                            <div class="ml-auto font-weight-bold"> $ 130 </div>
-                        </div>
-                        <div class="d-flex">
-                            <h4>Tax</h4>
-                            <div class="ml-auto font-weight-bold"> $ 2 </div>
-                        </div>
-                        <div class="d-flex">
-                            <h4>Shipping Cost</h4>
-                            <div class="ml-auto font-weight-bold"> Free </div>
-                        </div>
-                        <hr>
-                        <div class="d-flex gr-total">
-                            <h5>Grand Total</h5>
-                            <div class="ml-auto h5"> $ 388 </div>
-                        </div>
-                        <hr> </div>
-                </div>
                 <div class="col-12 d-flex shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover">Checkout</a> </div>
+                <div class="col-lg-8 col-sm-12"></div>
+                <div class="col-lg-8 col-sm-12"></div>
+                <div class="col-lg-8 col-sm-12"></div>
+                <div class="col-lg-8 col-sm-12"></div>
+                <div class="col-lg-8 col-sm-12"></div>
+                <div class="col-12 d-flex shopping-box"><a href="shop.html" class="ml-auto btn hvr-hover">Update Cart</a> </div>
+                <div class="col-lg-8 col-sm-12"></div>
+                <div class="col-lg-8 col-sm-12"></div>
+                <div class="col-lg-8 col-sm-12"></div>
+                <div class="col-lg-8 col-sm-12"></div>
+                <div class="col-lg-8 col-sm-12"></div>
+                <div class="col-12 d-flex shopping-box">
+
+                   <form>
+                    <button type="submit" onclick="alert('Added to cart successfully')" formmethod="get" formaction="cart.html" style="background-color: #d33b33;color: white;;height: 60px;width: 130px;font-size: large">Confirm Order</button>
+                   </form>
+                </div>
             </div>
 
         </div>
@@ -199,8 +233,7 @@
     <!-- End Footer  -->
     <!-- Start copyright  -->
     <div class="footer-copyright">
-        <p class="footer-company">All Rights Reserved. &copy; 2022 <a href="#">SheOut</a> Design By :
-            <a href="https://html.design/">html design</a></p>
+        <p class="footer-company">All Rights Reserved. &copy; 2022 <a href="#">SheOut</a> </p>
     </div>
     <!-- End copyright  -->
 
