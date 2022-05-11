@@ -332,9 +332,7 @@
   text-align: left;
 }
 
-.dropdown-content a:hover {
-  background-color: #d33b33;
-}
+
 
 .dropdown:hover .dropdown-content {
   display: block !important;

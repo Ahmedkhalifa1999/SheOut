@@ -2,6 +2,8 @@
 <html lang="en">
 <!-- Basic -->
 
+{% load static %}
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,23 +12,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>SheOut</title>
+    <title>SheOut | Women's Clothing | Shop</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -46,7 +48,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-left:1250px">
                     <div class="our-link" >
                         <ul>
-                            <li><a href="cart.html">My Account</a></li>
+                            <li><a href="{% 'cart.html' %}">My Account</a></li>
                             <li><a href="#">Contact Us</a></li>
                         </ul>
                     </div>
@@ -67,24 +69,24 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.html"><img style="width: 130px; height: 55px;" src="images/logo.png" class="logo" alt=""></a>
+                    <a class="navbar-brand" href="{% 'index.html' %}"><img style="width: 130px; height: 55px;" src="images/logo.png" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="navbar1">
-                  <a href="index.html">Home</a>
-                  <a href="about.html">About us</a>
+                  <a href="{% 'index.html' %}">Home</a>
+                  <a href="{% 'about.html' %}">About us</a>
                   <div class="dropdown">
                     <button class="dropbtn">Products
                       <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content">
-                      <a href="shop.html">Shirts</a>
-                      <a href="shop.html">Jeans</a>
-                      <a href="shop.html">Footwear</a>
-                      <a href="shop.html">Accessories</a>
-                      <a href="shop.html">Bags</a>
+                      <a href="{% 'shop.html' %}">Shirts</a>
+                      <a href="{% 'shop.html' %}">Jeans</a>
+                      <a href="{% 'shop.html' %}">Footwear</a>
+                      <a href="{% 'shop.html' %}">Accessories</a>
+                      <a href="{% 'shop.html' %}">Bags</a>
                     </div>
                   </div>
                   <div class="dropdown">
@@ -92,7 +94,7 @@
                       <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content">
-                      <a href="cart.html">Cart</a>
+                      <a href="{% 'cart.html' %}">Cart</a>
 
                     </div>
                   </div>
@@ -102,8 +104,9 @@
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
                     <ul>
-                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                        <li class="side-menu"><a href="cart.html">
+                        <li class="searchtext"><a href="#"><input type="search" id="site-search" name="q"/></a></li>
+                        <li class="search"><a href="{% 'shop.html' %}"><i class="fa fa-search"></i></a></li>
+                        <li class="side-menu"><a href="{% 'cart.html' %}">
 						<i class="fa fa-shopping-bag"></i>
 
 					</a></li>
@@ -128,7 +131,7 @@
                 <div class="col-lg-12">
                     <h2>Shop</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{% 'index.html' %}">Home</a></li>
                         <li class="breadcrumb-item active">Shop</li>
                     </ul>
                 </div>
@@ -158,22 +161,22 @@
                             <i class="fa fa-caret-down"></i>
                           </button>
                           <div class="dropdown-container">
-                            <a href="#">T-Shirts</a>
-                            <a href="#">Polo T-Shirts</a>
-                            <a href="#">Sweatshirts </a>
+                            <a href="{% 'shop.html' %}">T-Shirts</a>
+                            <a href="{% 'shop.html' %}">Polo T-Shirts</a>
+                            <a href="{% 'shop.html' %}">Sweatshirts </a>
 
                           </div>
                           <button class="dropdown-btn-side">Footwear
                             <i class="fa fa-caret-down"></i>
                           </button>
                           <div class="dropdown-container">
-                            <a href="#" >Sports Shoes <small class="text-muted">(10)</small></a>
-                            <a href="#" >Sneakers <small class="text-muted">(20)</small></a>
-                            <a href="#" >Formal Shoes <small class="text-muted">(20)</small></a>
+                            <a href="{% 'shop.html' %}" >Sports Shoes <small class="text-muted">(10)</small></a>
+                            <a href="{% 'shop.html' %}" >Sneakers <small class="text-muted">(20)</small></a>
+                            <a href="{% 'shop.html' %}" >Formal Shoes <small class="text-muted">(20)</small></a>
                           </div>
-                          <a href="#about">Men</a>
-                          <a href="#services">Accessories</a>
-                          <a href="#clients">Bags</a>
+                          <a href="{% 'shop.html' %}t">Men</a>
+                          <a href="{% 'shop.html' %}">Accessories</a>
+                          <a href="{% 'shop.html' %}">Bags</a>
                         </div>
 
 
@@ -256,16 +259,7 @@
 
                                 <p>Showing all 4 results</p>
                             </div>
-                            <div class="col-12 col-sm-4 text-center text-sm-right">
-                                <ul class="nav nav-tabs ml-auto">
-                                    <li>
-                                        <a class="nav-link active" href="#grid-view" data-toggle="tab"> <i class="fa fa-th"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link" href="#list-view" data-toggle="tab"> <i class="fa fa-list-ul"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
+
                         </div>
                         <div class="row product-categorie-box">
                             <div class="tab-content">
@@ -421,7 +415,7 @@
 
     <!-- Start copyright  -->
     <div class="footer-copyright">
-        <p class="footer-company">All Rights Reserved. &copy; 2022 <a href="#">SheOut</a> Design By :
+        <p class="footer-company">All Rights Reserved. &copy; 2022 <a href="{% 'index.html' %}">SheOut</a> Design By :
             <a href="https://html.design/">html design</a></p>
     </div>
     <!-- End copyright  -->
