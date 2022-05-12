@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
+{% load static %}
 
 <head>
     <meta charset="utf-8">
@@ -10,23 +11,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>SheOut | Women's Clothing | Checkout </title>
+    <title>SheOut | Women's Clothing | Checkout</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 
@@ -39,7 +47,7 @@
             <div class="container">
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
-                <a class="navbar-brand" href="index.html"><img style="width: 130px; height: 55px;" src="images/LOGO/Capture2.jpg" class="logo" alt=""></a>
+                <a class="navbar-brand" href="{% 'index.html' %}"><img style="width: 130px; height: 55px;" src="{% static 'images/logo.png' %}" class="logo" alt=""></a>
                 </div>
             </div>
             <!-- Start Side Menu -->
@@ -115,12 +123,12 @@
                                 </div>
                                 <div class="rounded p-2 bg-light">
                                     <div class="media mb-2 border-bottom">
-                                        <div class="media-body"> <a href="detail.html"> Lorem ipsum dolor sit amet</a>
+                                        <div class="media-body"> <a href="{% 'detail.html' %}"> Lorem ipsum dolor sit amet</a>
                                             <div class="small text-muted">Price: $80.00 <span class="mx-2">|</span> Qty: 1 <span class="mx-2">|</span> Subtotal: $80.00</div>
                                         </div>
                                     </div>
                                     <div class="media mb-2 border-bottom">
-                                        <div class="media-body"> <a href="detail.html"> Lorem ipsum dolor sit amet</a>
+                                        <div class="media-body"> <a href="{detail.html"> Lorem ipsum dolor sit amet</a>
                                             <div class="small text-muted">Price: $60.00 <span class="mx-2">|</span> Qty: 1 <span class="mx-2">|</span> Subtotal: $60.00</div>
                                         </div>
                                     </div>
@@ -165,7 +173,7 @@
                         </div>
                         <div>
                            <form>
-                            <button type="submit" onclick="alert('Order is successfully placed')"  formaction="index.html" formmethod="get" style="background-color: #d33b33;color: white;;height: 60px;width: 130px;font-size: large;">Place Order</button>
+                            <button type="submit" onclick="alert('Order is successfully placed')"  formaction="{% 'index.html' %}" formmethod="get" style="background-color: #d33b33;color: white;;height: 60px;width: 130px;font-size: large;">Place Order</button>
                            </form>
 
 

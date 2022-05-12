@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
+{% load static %}
 
 <head>
     <meta charset="utf-8">
@@ -16,22 +17,40 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 </head>
 
 <body>
-
+  <!-- Start Main Top -->
+  <div class="main-top">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-left:1250px">
+                  <div class="our-link" >
+                      <ul>
+                          <li><a href="{% 'cart.html' %}">My Account</a></li>
+                          <li><a href="#">Contact Us</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- End Main Top -->
     <!-- Start Main Top -->
     <header class="main-header">
         <!-- Start Navigation -->
@@ -39,7 +58,7 @@
             <div class="container">
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
-                <a class="navbar-brand" href="index.html"><img style="width: 130px; height: 55px;" src="images/LOGO/Capture2.jpg" class="logo" alt=""></a>
+                <a class="navbar-brand" href="{% 'index.html' %}"><img style="width: 130px; height: 55px;" src="{% static 'images/logo.png' %}" class="logo" alt=""></a>
                 </div>
             </div>
             <!-- Start Side Menu -->
@@ -86,8 +105,8 @@
                                 <label for="InputPassword1" class="mb-0">Password*</label>
                                 <input type="password" class="form-control" id="InputPassword1" placeholder="Password" required> </div>
                           </div>
-                          
-                           <button type="submit" onclick="alert('Login successfully')"  formaction="index.html" formmethod="get" style="background-color: #d33b33;color: white;;height: 50px;width: 110px;font-size: large;">Login</button>
+
+                           <button type="submit" onclick="alert('Login successfully')"  formaction="{% 'index.html' %}" formmethod="get" style="background-color: #d33b33;color: white;;height: 50px;width: 110px;font-size: large;">Login</button>
                           </form>
                 </div>
                 <div class="col-sm-6 col-lg-6 mb-3">
@@ -104,7 +123,7 @@
                                 <input type="password" class="form-control" id="InputPassword1" placeholder="Password" required> </div>
                         </div>
 
-                         <button type="submit" onclick="alert('Registered successfully')"  formaction="index.html" formmethod="get" style="background-color: #d33b33;color: white;;height: 50px;width: 110px;font-size: large;">Register</button>
+                         <button type="submit" onclick="alert('Registered successfully')"  formaction="{% 'index.html' %}" formmethod="get" style="background-color: #d33b33;color: white;;height: 50px;width: 110px;font-size: large;">Register</button>
                         </form>
                     </div>
                 </div>
