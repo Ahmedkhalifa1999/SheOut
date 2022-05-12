@@ -143,9 +143,9 @@
                                         <p>$ 80.0</p>
                                     </td>
                                     <td class="remove-pr">
-                                        <a href="#">
-									<i class="fas fa-times"></i>
-								</a>
+                                      <form>
+                                      <button class="remove" type="submit" onclick=""  formaction="cart.html" formmethod="get" style="color:black; font-weight:bold">X</button>
+                                     </form>
                                     </td>
                                 </tr>
                                 {% for item in cart-list %}
@@ -168,9 +168,9 @@
                                           <p>$ 80.0</p>
                                       </td>
                                       <td class="remove-pr">
-                                          <a href="#">
-                    <i class="fas fa-times"></i>
-                  </a>
+                                        <form>
+                                        <button class="remove" type="submit" onclick=""  formaction="cart.html" formmethod="get" style="color:black; font-weight:bold">X</button>
+                                       </form>
                                       </td>
                                   </tr>
                                   {% endfor %}
@@ -181,23 +181,27 @@
             </div>
             <div class="row my-5">
                 <div class="col-lg-8 col-sm-12"></div>
-                <div class="col-12 d-flex shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover">Checkout</a> </div>
-                <div class="col-lg-8 col-sm-12"></div>
-                <div class="col-lg-8 col-sm-12"></div>
-                <div class="col-lg-8 col-sm-12"></div>
-                <div class="col-lg-8 col-sm-12"></div>
-                <div class="col-lg-8 col-sm-12"></div>
-                <div class="col-12 d-flex shopping-box"><a href="shop.html" class="ml-auto btn hvr-hover">Update Cart</a> </div>
+                <div class="col-12 d-flex shopping-box">
+                  <form>
+                  <button type="submit" onclick="alert('Order confirmed')"  formaction="checkout.html" formmethod="get" style="background-color: #d33b33;color: white;;height: 60px;width: 130px;font-size: large;">Checkout</button>
+                 </form>
+               </div>
                 <div class="col-lg-8 col-sm-12"></div>
                 <div class="col-lg-8 col-sm-12"></div>
                 <div class="col-lg-8 col-sm-12"></div>
                 <div class="col-lg-8 col-sm-12"></div>
                 <div class="col-lg-8 col-sm-12"></div>
                 <div class="col-12 d-flex shopping-box">
-
-                   <form>
-                    <button type="submit" onclick="alert('Added to cart successfully')" formmethod="get" formaction="cart.html" style="background-color: #d33b33;color: white;;height: 60px;width: 130px;font-size: large">Confirm Order</button>
-                   </form>
+                  <form>
+                  <button type="submit" onclick=""  formaction="shop.html" formmethod="get" style="background-color: #d33b33;color: white;;height: 60px;width: 130px;font-size: large;">Update Cart</button>
+                 </form>
+                </div>
+                <div class="col-lg-8 col-sm-12"></div>
+                <div class="col-lg-8 col-sm-12"></div>
+                <div class="col-lg-8 col-sm-12"></div>
+                <div class="col-lg-8 col-sm-12"></div>
+                <div class="col-lg-8 col-sm-12"></div>
+                <div class="col-12 d-flex shopping-box">
                 </div>
             </div>
 

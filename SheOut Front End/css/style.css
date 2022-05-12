@@ -90,6 +90,7 @@
      outline: none;
 }
  a, .btn {
+     color : white;
      text-decoration: none !important;
      outline: none !important;
      -webkit-transition: all .3s ease-in-out;
@@ -311,6 +312,11 @@
 
 .navbar1 a:hover, .dropdown:hover .dropbtn {
   color: #d33b33;
+}
+
+button.remove {
+  border-style: hidden;
+  background-color:white;
 }
 
 .dropdown-content {
