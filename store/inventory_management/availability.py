@@ -19,5 +19,7 @@ def available(order: list) -> bool:
 
     ##msh 3arfen n update the database
     for item in order:
-        models.item.objects.filter(id=item.id)[0]['quantity'] - item.quantity
+        db_item = models.item.objects.get(id=item.id)
+        db_item.quantity -= item.quantity
+        db_item.save()
     return True
