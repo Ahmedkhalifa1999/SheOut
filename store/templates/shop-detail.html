@@ -39,16 +39,16 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="text-slid-box">
-                       
+
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    
-                   
+
+
                     <div class="our-link" style="margin-left: 510px ;">
                         <ul>
                             <li><a href="{% cart.html %}">My Account</a></li>
-                           
+
                             <li><a href="#">Contact Us</a></li>
                         </ul>
                     </div>
@@ -79,11 +79,11 @@
                         <i class="fa fa-caret-down"></i>
                       </button>
                       <div class="dropdown-content">
-                        <a href="{% shop.html %}">Shirts</a>
-                        <a href="{% shop.html %}">Jeans</a>
-                        <a href="{% shop.html %}">Footwear</a>
-                        <a href="{% shop.html %}">Accessories</a>
-                        <a href="{% shop.html %}">Bags</a>
+                        <a href="{% 'shop.html' %}">Shirts</a>
+                        <a href="{% 'shop.html' %}">Skirts</a>
+                        <a href="{% 'shop.html' %}">Pants</a>
+                        <a href="{% 'shop.html' %}">Dresses</a>
+                        <a href="{% 'shop.html' %}">Jackets</a>
                       </div>
                     </div>
                     <div class="dropdown">
@@ -92,11 +92,11 @@
                       </button>
                       <div class="dropdown-content">
                         <a href="{% cart.html %}">Cart</a>
-  
+
                       </div>
                     </div>
                   </div>
-               
+
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
                     <ul>
@@ -104,21 +104,21 @@
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                         <li class="side-menu"><a href="{% cart.html %}">
 						<i class="fa fa-shopping-bag"></i>
-                            
+
 					</a></li>
                     </ul>
                 </div>
                 <!-- End Atribute Navigation -->
             </div>
             <!-- Start Side Menu -->
-           
+
             <!-- End Side Menu -->
         </nav>
         <!-- End Navigation -->
     </header>
     <!-- End Main Top -->
 
-   
+
 
     <!-- Start All Title Box -->
     <div class="all-title-box">
@@ -144,7 +144,7 @@
                     <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active"> <img class="d-block w-100" src={{img}} alt="First slide"> </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -152,7 +152,7 @@
                     <div class="single-product-details" style="margin: 100px;">
                         <h2>{{name-of-item}}</h2>
                         <h5>{{price}}</h5>
-                       
+
                                 <ul style="width: 500px;">
                                     <li>
                                         <div class="form-group size-st">
@@ -164,7 +164,7 @@
                                                 <option value="4" selected="">L</option>
                                                 <option value="5">XL</option>
                                                 <option value="6">XXL</option>
-                                             
+
                                             </select>
                                         </div>
                                     </li>
@@ -178,7 +178,7 @@
                                                 <option value="4">4</option>
                                                 <option value="5">5</option>
                                                 <option value="6">6</option>
-                                             
+
                                             </select>
                                         </div>
                                     </li>
@@ -186,14 +186,14 @@
 
                                 <div class="price-box-bar">
                                     <div class="cart-and-bay-btn">
-                                       
+
                                        <form>
                                         <button type="submit" onclick="alert('Added to cart successfully')" formmethod="get" formaction="{% cart.html %}" style="background-color: #d33b33;color: white;;height: 60px;width: 130px;font-size: large;">Add to cart</button>
                                        </form>
                                     </div>
                                 </div>
 
-                                
+
                     </div>
                 </div>
             </div>
@@ -206,7 +206,7 @@
     <footer>
         <div class="footer-main">
             <div class="container">
-                
+
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-link-contact">
                             <h4>Contact Us</h4>
@@ -223,7 +223,7 @@
                             </ul>
                         </div>
                     </div>
-                
+
             </div>
         </div>
     </footer>
@@ -231,12 +231,12 @@
 
     <!-- Start copyright  -->
     <div class="footer-copyright">
-        <p class="footer-company">All Rights Reserved. &copy; 2022   <a href="{% index.html %}"> SHEOUT</a> 
-           
+        <p class="footer-company">All Rights Reserved. &copy; 2022   <a href="{% index.html %}"> SHEOUT</a>
+
     </div>
     <!-- End copyright  -->
 
-   
+
 </body>
 
 </html>
