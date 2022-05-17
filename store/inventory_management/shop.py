@@ -30,9 +30,7 @@ def getItem(name: str) -> item:
     result = models.item.objects.filter(name=name)
     if not result.exists():
         return None
-    required = item()
-    required.name = name
-    required.price = result[0].price
+    required = item(name, result[0].price)
     return required
 
 
