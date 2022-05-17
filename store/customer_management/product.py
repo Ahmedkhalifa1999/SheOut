@@ -18,14 +18,16 @@ class cart_item:
 takes a customer id and item id and adds respective the specified item to the specified customer's cart
 """
 def add_to_cart(username: str, item_name: str, size: str, quantity: int) -> None:
-    models.cart_item.objects.create(customer=username, item=item_name, size=size, quantity=quantity)
+    customer_ref = models.customer.objects.filter(email=username)[0]
+    item_ref = models.item.objects.filter(name=item_name)[0]
+    models.cart_item.objects.create(customer=customer_ref, item=item_ref, size=size, quantity=quantity)
 
 
 """
 returns specified customer cart as a list of cart_item objects
 """
 def get_cart(username: str) -> list:
-    return [cart_item(entry.name, entry.size, entry.quantity) for entry in models.cart_item.objects.filter(customer=username)]
+    return [cart_item(entry.item, entry.size, entry.quantity) for entry in models.cart_item.objects.filter(customer=username)]
 
     
         
