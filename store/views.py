@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from django.http import HttpRequest, HttpResponse
-from .inventory_management import availability, shop
+from .inventory_management import orders, shop
 from .customer_management import customer, product
 
 def index(request: HttpRequest):
@@ -24,10 +24,12 @@ def item(request: HttpRequest):
     if not request.user.is_authenticated:
         return redirect('/login_register/')
     if request.method == 'POST':
-        product.add_to_cart(request.user.username, request.POST['item_name'], 1)
+        product.add_to_cart(request.user.username, request.POST['item_name'], request.POST['size'], request.POST['quantity'])
         return redirect('/shop')
 
     item = shop.getItem(request.GET['name'])
+    if item == None:
+        return redirect('/shop')
     context = {
         'name' : item.name,
         'price' : item.price,

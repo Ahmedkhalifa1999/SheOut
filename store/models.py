@@ -1,19 +1,27 @@
 from django.db import models
 
+sizes = [
+    ('XS', 'XS'),
+    ('S', 'S'),
+    ('M', 'M'),
+    ('L', 'L'),
+    ('XL', 'XL'),
+    ('XXL', 'XXL')
+]
+
+categories = [
+    ('Shirts', 'Shirts'),
+    ('Skirts', 'Skirts'),
+    ('Pants', 'Pants'),
+    ('Dresses', 'Dresses'),
+    ('Jackets', 'Jackets')
+]
+
 # Table representing items available at shop
 class item(models.Model):
-    sizes = [
-        ('XS', 'XS'),
-        ('S', 'S'),
-        ('M', 'M'),
-        ('L', 'L'),
-        ('XL', 'XL'),
-        ('XXL', 'XXL')
-    ]
     name = models.CharField(max_length=20, primary_key=True, default="")
+    category = models.CharField(max_length=20, choices = categories, null = True)
     price = models.PositiveIntegerField(null=True)
-    size = models.CharField(max_length = 3, choices = sizes, null = True)
-    quantity = models.PositiveIntegerField(default = 0)
 
 # Table represneting customer data (not used for user authentication)
 class customer(models.Model):
@@ -26,6 +34,7 @@ class customer(models.Model):
 class cart_item(models.Model):
     customer = models.ForeignKey('customer', on_delete = models.CASCADE)
     item = models.ForeignKey('item', on_delete = models.RESTRICT)
+    size = models.CharField(max_length = 3, choices = sizes, null = True)
     quantity = models.PositiveIntegerField(default=0)
         
 # anhy item alee gwa el order 
@@ -33,8 +42,9 @@ class cart_item(models.Model):
 class orderling(models.Model):
     main_order = models.ForeignKey('order', on_delete = models.CASCADE)
     item = models.ForeignKey('item', on_delete = models.RESTRICT)
-    price = models.PositiveIntegerField(null=True)
+    size = models.CharField(max_length = 3, choices = sizes, null = True)
     quantity = models.PositiveIntegerField(default=0)
+    price = models.PositiveIntegerField(null=True)
 
 # Table seprifying orders
 class order(models.Model):
