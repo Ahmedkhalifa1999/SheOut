@@ -1,5 +1,5 @@
-import models
-from inventory_management.availability import available,order_item
+from .. import models
+from ..inventory_management.availability import available,order_item
 from store.models import customer
 import datetime 
 
@@ -11,8 +11,8 @@ class cart_item:
 """
 takes a customer id and item id and adds respective the specified item to the specified customer's cart
 """
-def add_to_cart(customer_id: int, item_id: int, quantities:int) -> None:
-    models.cart_item.objects.create(customer=customer_id,item=item_id,quantity=quantities)
+def add_to_cart(username: str, item_name: str, quantity: int) -> None:
+    models.cart_item.objects.create(customer=username, item=item_name, quantity=quantity)
 
 
 """

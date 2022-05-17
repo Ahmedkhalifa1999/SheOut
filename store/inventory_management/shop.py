@@ -1,4 +1,4 @@
-import models
+from .. import models
 
 class filter_parameters:
     name = None
@@ -8,7 +8,6 @@ class filter_parameters:
 class item:
     name = None
     price = None
-    image = None
     sizes = None
 
 """
@@ -29,12 +28,14 @@ def search(parameters: filter_parameters) -> list:
 """
 takes item ID and returns object of type item corresponding to passed item ID
 """
-def getItem(ID: int) -> item:
+def getItem(name: str) -> item:
+    result = models.item.objects.filter(name=name)
+    if not result.exists():
+        return None
     res = item()
-    res.name = models.item.objects.filter(id=ID)[0]['name']
-    res.price = models.item.objects.filter(id=ID)[0]['price']
-    res.sizes = models.item.objects.filter(id=ID)[0]['size']
-    res.image = models.item.objects.filter(id=ID)[0]['image']
+    res.name = name
+    res.price = result[0].price
+    res.sizes = result[0].size
     return res
 
 

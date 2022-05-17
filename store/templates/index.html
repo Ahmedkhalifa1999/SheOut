@@ -39,7 +39,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-left:1250px">
                     <div class="our-link" >
                         <ul>
-                            <li><a href="{% 'cart.html' %}">My Account</a></li>
+                            <li><a href="/cart">My Account</a></li>
                             <li><a href="#">Contact Us</a></li>
                         </ul>
                     </div>
@@ -55,24 +55,24 @@
 
                 <!-- Start Header Navigation -->
 
-                <a class="navbar-brand" href="{% 'index.html' %}"><img style="width: 130px; height: 55px;" src="{% static 'images/LOGO/Capture2.jpg' %}" class="logo" alt=""></a>
+                <a class="navbar-brand" href="/index"><img style="width: 130px; height: 55px;" src="{% static 'images/LOGO/Capture2.jpg' %}" class="logo" alt=""></a>
 
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="navbar1">
-                                 <a href="{% 'index.html' %}">Home</a>
-                                 <a href="{% 'about.html' %}">About us</a>
+                                 <a href="/index">Home</a>
+                                 <a href="/about">About us</a>
                                  <div class="dropdown">
                                    <button class="dropbtn">Products
                                      <i class="fa fa-caret-down"></i>
                                    </button>
                                    <div class="dropdown-content">
-                                     <a href="{% 'shop.html' %}">Shirts</a>
-                                     <a href="{% 'shop.html' %}">Skirts</a>
-                                     <a href="{% 'shop.html' %}">Pants</a>
-                                     <a href="{% 'shop.html' %}">Dresses</a>
-                                     <a href="{% 'shop.html' %}">Jackets</a>
+                                     <a href="/shop">Shirts</a>
+                                     <a href="/shop">Skirts</a>
+                                     <a href="/shop">Pants</a>
+                                     <a href="/shop">Dresses</a>
+                                     <a href="/shop">Jackets</a>
                                    </div>
                                  </div>
                                  <div class="dropdown">
@@ -80,8 +80,8 @@
                                      <i class="fa fa-caret-down"></i>
                                    </button>
                                    <div class="dropdown-content">
-                                     <a href="{% 'cart.html' %}">Cart</a>
-                                     <a href="{% 'login-register' %}">My Account</a>
+                                     <a href="/cart">Cart</a>
+                                     <a href="/login-register">My Account</a>
                                    </div>
                                  </div>
                                </div>
@@ -93,7 +93,7 @@
                        <link rel="stylesheet" href=" {% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %}">
 <li class="searchtext"><a href="#"><input type="search" id="site-search" name="q"></a></li>
                         <li class="search" ><a href="#"><i class="fa fa-search" ></i></a></li>
-					<li>	<a href="{% 'cart.html' %}"><i class="fa fa-shopping-bag" style="font-size:18px"></i></a></li>
+					<li>	<a href="/cart"><i class="fa fa-shopping-bag" style="font-size:18px"></i></a></li>
 
                     </ul>
                 </div>
@@ -117,7 +117,7 @@
                         <div class="col-md-12">
 
                             <form>
-<button  type="submit" formmethod="get" formaction="{% 'shop.html' %}" style="background-color: #d33b33;color: white;;height: 60px;width: 130px;font-size: large;text-align: center; ">Shop New</button>
+<button  type="submit" formmethod="get" formaction="/shop" style="background-color: #d33b33;color: white;;height: 60px;width: 130px;font-size: large;text-align: center; ">Shop New</button>
    </form>
                         </div>
                     </div>
@@ -135,13 +135,13 @@
                     <div class="shop-cat-box">
                         <img class="img-fluid" src=" {% static 'images/t-shirts-img.jpg' %}" alt="" />
                         <form>
-<button  type="submit" formmethod="get" formaction="{% 'shop.html' %}">T-shirt</button>
+<button  type="submit" formmethod="get" formaction="/shop">T-shirt</button>
 </form>
                     </div>
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="{% static 'images/shirt-img.jpg' %}" alt="" />
                         <form>
-<button  type="submit" formmethod="get" formaction="{% 'shop.html' %}">Shirt</button>
+<button  type="submit" formmethod="get" formaction="/shop">Shirt</button>
 </form>
                     </div>
                 </div>
@@ -149,13 +149,13 @@
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="{% static 'images/wallet-img.jpg' %}" alt="" />
                         <form>
-<button  type="submit" formmethod="get" formaction="{% 'shop.html' %}">wallet</button>
+<button  type="submit" formmethod="get" formaction="/shop">wallet</button>
 </form>
                     </div>
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="{% static 'images/women-bag-img.jpg' %}" alt="" />
                         <form>
-<button  type="submit" formmethod="get" formaction="{% 'shop.html' %}">Bags</button>
+<button  type="submit" formmethod="get" formaction="/shop">Bags</button>
 </form>
                     </div>
                 </div>
@@ -163,13 +163,13 @@
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="{% static 'images/shoes-img.jpg' %}" alt="" />
                         <form>
-<button  type="submit" formmethod="get" formaction="{% 'shop.html' %}">Shoes</button>
+<button  type="submit" formmethod="get" formaction="/shop">Shoes</button>
 </form>
                     </div>
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="{% static 'images/women-shoes-img.jpg' %}" alt="" />
                         <form>
-<button  type="submit" formmethod="get" formaction="{% 'shop.html' %}">Women Shoes</button>
+<button  type="submit" formmethod="get" formaction="/shop">Women Shoes</button>
 </form>
                     </div>
                 </div>

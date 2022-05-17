@@ -48,7 +48,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-left:1250px">
                     <div class="our-link" >
                         <ul>
-                            <li><a href="{% 'cart.html' %}">My Account</a></li>
+                            <li><a href="/cart">My Account</a></li>
                             <li><a href="#">Contact Us</a></li>
                         </ul>
                     </div>
@@ -69,24 +69,24 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="{% 'index.html' %}"><img style="width: 130px; height: 55px;" src="{% static 'images/logo.png' %}" class="logo" alt=""></a>
+                    <a class="navbar-brand" href="/index"><img style="width: 130px; height: 55px;" src="{% static 'images/logo.png' %}" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="navbar1">
-                  <a href="{% 'index.html' %}">Home</a>
-                  <a href="{% 'about.html' %}">About us</a>
+                  <a href="/index">Home</a>
+                  <a href="/about">About us</a>
                   <div class="dropdown">
                     <button class="dropbtn">Products
                       <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content">
-                      <a href="{% 'shop.html' %}">Shirts</a>
-                      <a href="{% 'shop.html' %}">Skirts</a>
-                      <a href="{% 'shop.html' %}">Pants</a>
-                      <a href="{% 'shop.html' %}">Dresses</a>
-                      <a href="{% 'shop.html' %}">Jackets</a>
+                      <a href="/shop">Shirts</a>
+                      <a href="/shop">Skirts</a>
+                      <a href="/shop">Pants</a>
+                      <a href="/shop">Dresses</a>
+                      <a href="/shop">Jackets</a>
                     </div>
                   </div>
                   <div class="dropdown">
@@ -94,7 +94,7 @@
                       <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content">
-                      <a href="{% 'cart.html' %}">Cart</a>
+                      <a href="/cart">Cart</a>
 
                     </div>
                   </div>
@@ -105,8 +105,8 @@
                 <div class="attr-nav">
                     <ul>
                         <li class="searchtext"><a href="#"><input type="search" id="site-search" name="q"/></a></li>
-                        <li class="search"><a href="{% 'shop.html' %}"><i class="fa fa-search"></i></a></li>
-                        <li class="side-menu"><a href="{% 'cart.html' %}">
+                        <li class="search"><a href="/shop"><i class="fa fa-search"></i></a></li>
+                        <li class="side-menu"><a href="/cart">
 						<i class="fa fa-shopping-bag"></i>
 
 					</a></li>
@@ -131,7 +131,7 @@
                 <div class="col-lg-12">
                     <h2>Shop</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{% 'index.html' %}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/index">Home</a></li>
                         <li class="breadcrumb-item active">Shop</li>
                     </ul>
                 </div>
@@ -161,22 +161,22 @@
                             <i class="fa fa-caret-down"></i>
                           </button>
                           <div class="dropdown-container">
-                            <a href="{% 'shop.html' %}">T-Shirts</a>
-                            <a href="{% 'shop.html' %}">Polo T-Shirts</a>
-                            <a href="{% 'shop.html' %}">Sweatshirts </a>
+                            <a href="/shop">T-Shirts</a>
+                            <a href="/shop">Polo T-Shirts</a>
+                            <a href="/shop">Sweatshirts </a>
 
                           </div>
                           <button class="dropdown-btn-side">Footwear
                             <i class="fa fa-caret-down"></i>
                           </button>
                           <div class="dropdown-container">
-                            <a href="{% 'shop.html' %}" >Sports Shoes <small class="text-muted">(10)</small></a>
-                            <a href="{% 'shop.html' %}" >Sneakers <small class="text-muted">(20)</small></a>
-                            <a href="{% 'shop.html' %}" >Formal Shoes <small class="text-muted">(20)</small></a>
+                            <a href="/shop" >Sports Shoes <small class="text-muted">(10)</small></a>
+                            <a href="/shop" >Sneakers <small class="text-muted">(20)</small></a>
+                            <a href="/shop" >Formal Shoes <small class="text-muted">(20)</small></a>
                           </div>
-                          <a href="{% 'shop.html' %}t">Men</a>
-                          <a href="{% 'shop.html' %}">Accessories</a>
-                          <a href="{% 'shop.html' %}">Bags</a>
+                          <a href="/shop">Men</a>
+                          <a href="/shop">Accessories</a>
+                          <a href="/shop">Bags</a>
                         </div>
 
 
@@ -257,7 +257,7 @@
                         <div class="product-item-filter row">
                             <div class="col-12 col-sm-8 text-center text-sm-left">
 
-                                <p>Showing all 4 results</p>
+                                <p>Showing all {{count}} results</p>
                             </div>
 
                         </div>
@@ -272,7 +272,7 @@
                                                     <div class="type-lb">
                                                         <p class="new">New</p>
                                                     </div>
-                                                    <img src={{item.img}} class="img-fluid" alt="Image">
+                                                    <img src={{item.image}} class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
 
                                                         <button class="cart" type="submit" formmethod="get" formaction="shop-detail.html">View Item</button>
@@ -415,7 +415,7 @@
 
     <!-- Start copyright  -->
     <div class="footer-copyright">
-        <p class="footer-company">All Rights Reserved. &copy; 2022 <a href="{% 'index.html' %}">SheOut</a> Design By :
+        <p class="footer-company">All Rights Reserved. &copy; 2022 <a href="/index">SheOut</a> Design By :
             <a href="https://html.design/">html design</a></p>
     </div>
     <!-- End copyright  -->

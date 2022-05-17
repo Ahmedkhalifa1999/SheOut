@@ -1,4 +1,4 @@
-import models
+from .. import models
 
 class order_item:
     ID = None

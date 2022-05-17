@@ -41,7 +41,7 @@
               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-left:1250px">
                   <div class="our-link" >
                       <ul>
-                          <li><a href="{% 'cart.html' %}">My Account</a></li>
+                          <li><a href="/cart">My Account</a></li>
                           <li><a href="#">Contact Us</a></li>
                       </ul>
                   </div>
@@ -62,24 +62,24 @@
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                   <i class="fa fa-bars"></i>
               </button>
-                  <a class="navbar-brand" href="{% 'index.html' %}"><img style="width: 130px; height: 55px;" src="{% static 'images/logo.png' %}" class="logo" alt=""></a>
+                  <a class="navbar-brand" href="/index"><img style="width: 130px; height: 55px;" src="{% static 'images/logo.png' %}" class="logo" alt=""></a>
               </div>
               <!-- End Header Navigation -->
 
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="navbar1">
-                <a href="{% 'index.html' %}">Home</a>
-                <a href="{% 'about.html' %}">About us</a>
+                <a href="/index">Home</a>
+                <a href="/about">About us</a>
                 <div class="dropdown">
                   <button class="dropbtn">Products
                     <i class="fa fa-caret-down"></i>
                   </button>
                   <div class="dropdown-content">
-                    <a href="{% 'shop.html' %}">Shirts</a>
-                    <a href="{% 'shop.html' %}">Skirts</a>
-                    <a href="{% 'shop.html' %}">Pants</a>
-                    <a href="{% 'shop.html' %}">Dresses</a>
-                    <a href="{% 'shop.html' %}">Jackets</a>
+                    <a href="/shop">Shirts</a>
+                    <a href="/shop">Skirts</a>
+                    <a href="/shop">Pants</a>
+                    <a href="/shop">Dresses</a>
+                    <a href="/shop">Jackets</a>
                   </div>
                 </div>
                 <div class="dropdown">
@@ -87,7 +87,7 @@
                     <i class="fa fa-caret-down"></i>
                   </button>
                   <div class="dropdown-content">
-                    <a href="{% 'cart.html' %}">Cart</a>
+                    <a href="/cart">Cart</a>
 
                   </div>
                 </div>
@@ -99,7 +99,7 @@
                     <ul>
                         <li class="searchtext"><a href="#"><input type="search" id="site-search" name="q"/></a></li>
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                        <li class="side-menu"><a href="{% cart.html %}">
+                        <li class="side-menu"><a href="/cart">
 						<i class="fa fa-shopping-bag"></i>
 
 					</a></li>
@@ -120,7 +120,7 @@
                 <div class="col-lg-12">
                     <h2>Cart</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{% shop.html %}">Shop</a></li>
+                        <li class="breadcrumb-item"><a href="/shop">Shop</a></li>
                         <li class="breadcrumb-item active">Cart</li>
                     </ul>
                 </div>
@@ -175,16 +175,16 @@
                                   <tr>
                                       <td class="thumbnail-img">
                                           <a href="#">
-                    <img class="img-fluid" src={{cart.item}} alt="" />
+                    <img class="img-fluid" src={{item.image}} alt="" />
                   </a>
                                       </td>
                                       <td class="name-pr">
                                           <a href="#">
-                    {{cart.name}}
+                    {{item.name}}
                   </a>
                                       </td>
                                       <td class="price-pr">
-                                          <p>{{cart.price}}</p>
+                                          <p>{{item.price}}</p>
                                       </td>
                                       <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
                                       <td class="total-pr">
@@ -206,7 +206,7 @@
                 <div class="col-lg-8 col-sm-12"></div>
                 <div class="col-12 d-flex shopping-box">
                   <form>
-                  <button type="submit" onclick="alert('Order confirmed')"  formaction="{% 'checkout.html' %}" formmethod="get" style="background-color: #d33b33;color: white;;height: 60px;width: 130px;font-size: large;">Checkout</button>
+                  <button type="submit" onclick="alert('Order confirmed')"  formaction="/checkout" formmethod="get" style="background-color: #d33b33;color: white;;height: 60px;width: 130px;font-size: large;">Checkout</button>
                  </form>
                </div>
                 <div class="col-lg-8 col-sm-12"></div>
@@ -216,7 +216,7 @@
                 <div class="col-lg-8 col-sm-12"></div>
                 <div class="col-12 d-flex shopping-box">
                   <form>
-                  <button type="submit" onclick=""  formaction="{% 'shop.html' %}" formmethod="get" style="background-color: #d33b33;color: white;;height: 60px;width: 130px;font-size: large;">Update Cart</button>
+                  <button type="submit" onclick=""  formaction="/shop" formmethod="get" style="background-color: #d33b33;color: white;;height: 60px;width: 130px;font-size: large;">Update Cart</button>
                  </form>
                 </div>
                 <div class="col-lg-8 col-sm-12"></div>

@@ -10,32 +10,23 @@ class item(models.Model):
         ('XL', 'XL'),
         ('XXL', 'XXL')
     ]
-    name = models.CharField(max_length=20, null=True)
+    name = models.CharField(max_length=20, primary_key=True, default="")
     price = models.PositiveIntegerField(null=True)
     size = models.CharField(max_length = 3, choices = sizes, null = True)
     quantity = models.PositiveIntegerField(default = 0)
-    image = models.FilePathField(null=True)
-
-    def __str__(self):
-        return ""
 
 # Table represneting customer data (not used for user authentication)
 class customer(models.Model):
-    name = models.CharField(max_length = 50, null=True)
-    email = models.EmailField(null=True)
-    address = models.CharField(max_length = 100, null=True)
+    email = models.EmailField(primary_key=True, default="")
 
     def __str__(self):
-        return ""
+        return self.email
 
 # Table represnting cart items (to store user carts)
 class cart_item(models.Model):
     customer = models.ForeignKey('customer', on_delete = models.CASCADE)
     item = models.ForeignKey('item', on_delete = models.RESTRICT)
     quantity = models.PositiveIntegerField(default=0)
-
-    def __str__(self):
-        return ""
         
 # anhy item alee gwa el order 
 # Table specifying order fragements 
@@ -45,12 +36,7 @@ class orderling(models.Model):
     price = models.PositiveIntegerField(null=True)
     quantity = models.PositiveIntegerField(default=0)
 
-    def __str__(self):
-        return ""
-
 # Table seprifying orders
 class order(models.Model):
     customer = models.ForeignKey('customer', null = True, on_delete = models.SET_NULL)
     time = models.DateTimeField(null = True)
-    def __str__(self):
-        return ""
