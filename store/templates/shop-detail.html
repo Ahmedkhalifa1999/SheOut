@@ -2,6 +2,7 @@
 <html lang="en">
 <!-- Basic -->
 {% load static %}
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,17 +17,17 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="{% static "images/favicon.ico" %}" type="image/x-icon">
-    <link rel="apple-touch-icon" href="{% static "images/apple-touch-icon.png" %}">
+    <link rel="shortcut icon" href="{% static " images/favicon.ico" %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static " images/apple-touch-icon.png" %}">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static " css/bootstrap.min.css" %}">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static " css/style.css" %}">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="{% static "css/responsive.css" %}">
+    <link rel="stylesheet" href="{% static " css/responsive.css" %}">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static "css/custom.css" %}">
+    <link rel="stylesheet" href="{% static " css/custom.css" %}">
 
 
 </head>
@@ -65,47 +66,49 @@
             <div class="container">
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                </button>
-                    <a class="navbar-brand" href="/"><img src="{% static "images/LOGO/Capture2.JPG" %}" class="logo" alt="" style="width: 130px;height: 55px;"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
+                        aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/"><img src="{% static " images/LOGO/Capture2.JPG" %}" class="logo"
+                            alt="" style="width: 130px;height: 55px;"></a>
                 </div>
                 <!-- End Header Navigation -->
                 <div class="navbar1">
                     <a href="/">Home</a>
                     <a href="/about">About us</a>
                     <div class="dropdown">
-                      <button class="dropbtn">Products
-                        <i class="fa fa-caret-down"></i>
-                      </button>
-                      <div class="dropdown-content">
-                        <a href="/shop">Shirts</a>
-                        <a href="/shop">Skirts</a>
-                        <a href="/shop">Pants</a>
-                        <a href="/shop">Dresses</a>
-                        <a href="/shop">Jackets</a>
-                      </div>
+                        <button class="dropbtn">Products
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="/shop">Shirts</a>
+                            <a href="/shop">Skirts</a>
+                            <a href="/shop">Pants</a>
+                            <a href="/shop">Dresses</a>
+                            <a href="/shop">Jackets</a>
+                        </div>
                     </div>
                     <div class="dropdown">
-                      <button class="dropbtn">SHOP
-                        <i class="fa fa-caret-down"></i>
-                      </button>
-                      <div class="dropdown-content">
-                        <a href="/cart">Cart</a>
+                        <button class="dropbtn">SHOP
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="/cart">Cart</a>
 
-                      </div>
+                        </div>
                     </div>
-                  </div>
+                </div>
 
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
                     <ul>
-                        <li class="searchtext"><a href="#"><input type="search" id="site-search" name="q"/></a></li>
+                        <li class="searchtext"><a href="#"><input type="search" id="site-search" name="q" /></a></li>
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                         <li class="side-menu"><a href="/cart">
-						<i class="fa fa-shopping-bag"></i>
+                                <i class="fa fa-shopping-bag"></i>
 
-					</a></li>
+                            </a></li>
                     </ul>
                 </div>
                 <!-- End Atribute Navigation -->
@@ -143,7 +146,8 @@
                 <div class="col-xl-5 col-lg-5 col-md-6">
                     <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active"> <img class="d-block w-100" src="{% static '' %}{{image}}" alt="First slide"> </div>
+                            <div class="carousel-item active"> <img class="d-block w-100" src="{% static '' %}{{image}}"
+                                    alt="First slide"> </div>
 
                         </div>
                     </div>
@@ -153,46 +157,51 @@
                         <h2>{{name}}</h2>
                         <h5>{{price}} EGP</h5>
 
-                                <ul style="width: 500px;">
-                                    <li>
-                                        <div class="form-group size-st">
-                                            <label class="size-label" style="color:black ;">Size</label>
-                                            <select name="size" id="size" style="height:40px; width: 200px;" >
-                                                <option value="1">XS</option>
-                                                <option value="2">S</option>
-                                                <option value="3">M</option>
-                                                <option value="4" selected="">L</option>
-                                                <option value="5">XL</option>
-                                                <option value="6">XXL</option>
 
-                                            </select>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="form-group quantity-box">
-                                            <label class="control-label" style="color: black;">Quantity</label>
-                                            <select name="quantity" id="quantity" style="height:40px; width: 200px;">
-                                                <option value="1" selected="">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
 
-                                            </select>
-                                        </div>
-                                    </li>
-                                </ul>
+                        <div class="price-box-bar">
+                            <div class="cart-and-bay-btn">
 
-                                <div class="price-box-bar">
-                                    <div class="cart-and-bay-btn">
+                                <form>
+                                    <ul style="width: 500px;">
+                                        <li>
+                                            <div class="form-group size-st">
+                                                <label class="size-label" style="color:black ;">Size</label>
+                                                <select name="size" id="size" style="height:40px; width: 200px;">
+                                                    <option value="1">XS</option>
+                                                    <option value="2">S</option>
+                                                    <option value="3">M</option>
+                                                    <option value="4" selected="">L</option>
+                                                    <option value="5">XL</option>
+                                                    <option value="6">XXL</option>
 
-                                       <form>
-                                        <input type="hidden" name="item_name" value={{ name }}>
-                                        <button type="submit" formmethod="post" formaction="" style="background-color: #d33b33;color: white;;height: 60px;width: 130px;font-size: large;">Add to cart</button>
-                                       </form>
-                                    </div>
-                                </div>
+                                                </select>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-group quantity-box">
+                                                <label class="control-label" style="color: black;">Quantity</label>
+                                                <select name="quantity" id="quantity"
+                                                    style="height:40px; width: 200px;">
+                                                    <option value="1" selected="">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+
+                                                </select>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <input type="hidden" name="item_name" value={{ name }}>
+                                    <button type="submit" formmethod="post" formaction=""
+                                        style="background-color: #d33b33;color: white;;height: 60px;width: 130px;font-size: large;">Add
+                                        to cart</button>
+                                </form>
+                            </div>
+                        </div>
 
 
                     </div>
@@ -208,22 +217,25 @@
         <div class="footer-main">
             <div class="container">
 
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-link-contact">
-                            <h4>Contact Us</h4>
-                            <ul>
-                                <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
-                                </li>
-                                <li>
-                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
-                                </li>
-                                <li>
-                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="footer-link-contact">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li>
+                                <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street
+                                    Wichita,<br> KS 67213 </p>
+                            </li>
+                            <li>
+                                <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705
+                                        770</a></p>
+                            </li>
+                            <li>
+                                <p><i class="fas fa-envelope"></i>Email: <a
+                                        href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
+                            </li>
+                        </ul>
                     </div>
+                </div>
 
             </div>
         </div>
@@ -232,7 +244,7 @@
 
     <!-- Start copyright  -->
     <div class="footer-copyright">
-        <p class="footer-company">All Rights Reserved. &copy; 2022   <a href="/"> SHEOUT</a>
+        <p class="footer-company">All Rights Reserved. &copy; 2022 <a href="/"> SHEOUT</a>
 
     </div>
     <!-- End copyright  -->
