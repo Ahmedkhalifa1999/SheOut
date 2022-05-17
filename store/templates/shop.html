@@ -201,16 +201,14 @@
                                             <div class="type-lb">
                                                 <p class="new">New</p>
                                             </div>
-                                            <img src={{item.image}} class="img-fluid" alt="Image">
+                                            <img src="{% static '' %}{{item.image}}" class="img-fluid" alt="Image">
                                             <div class="mask-icon">
-
-                                                <button class="cart" type="submit" formmethod="get"
-                                                    formaction="shop-detail.html">View Item</button>
+                                                <button class="cart" type="submit" formmethod="get"><a href="/item/?name={{item.name}}">View Item</a></button>
                                             </div>
                                         </div>
                                         <div class="why-text">
                                             <h4>{{item.name}}</h4>
-                                            <h5> {{item.price}}</h5>
+                                            <h5>{{item.price}} EGP</h5>
                                         </div>
                                     </div>
                                 </div>

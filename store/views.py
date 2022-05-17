@@ -13,12 +13,15 @@ def view_shop(request: HttpRequest):
         return redirect('/login_register/')
     parameters = shop.filter_parameters()
     item_list = shop.search(parameters)
+    for item in item_list:
+        print(item.name)
+        print(item.price)
+        print(item.image)
     context = {
         'item_list': item_list,
         'count' : len(item_list)
     }
     return render(request, 'shop.html', context)
-
 
 def item(request: HttpRequest):
     if not request.user.is_authenticated:
@@ -50,7 +53,7 @@ def checkout(request: HttpRequest):
     if not request.user.is_authenticated:
         return redirect('/login_register/')
     if request.method == 'POST':
-        product.checkout(request.user.username)
+        product.checkout(request.user.username, request.POST['address'])
         return redirect('/')
     else:
         return render(request, 'checkout.html')

@@ -7,10 +7,12 @@ class filter_parameters:
 class item:
     name = None
     price = None
+    image = None
 
     def __init__(self, name, price):
         self.name = name
         self.price = price
+        self.image = "product_images/" + name + ".png"
 
 """
 takes a filter_parameters object and returns list of items matching filter criteria

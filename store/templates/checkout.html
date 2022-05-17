@@ -164,12 +164,13 @@
                         </div>
                         <div>
                            <form>
+                            {% csrf_token %}
                              <div class="title-left">
                                  <h3>Billing address</h3>
                              </div>
                                  <div class="mb-3">
                                      <label for="address">Address *</label>
-                                     <input type="text" class="form-control" id="address" placeholder="" required>
+                                     <input type="text" name="address" class="form-control" id="address" placeholder="" required>
                                      <div class="invalid-feedback"> Please enter your shipping address. </div>
                                  </div>
                             <button type="submit" onclick="alert('Order is successfully placed')"  formaction="" formmethod="post" style="background-color: #d33b33;color: white;;height: 60px;width: 130px;font-size: large;">Place Order</button>

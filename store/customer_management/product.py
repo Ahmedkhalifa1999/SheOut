@@ -4,7 +4,7 @@ from store.models import customer
 import datetime 
 
 class cart_item:
-    name: str = ""
+    ref: str = ""
     size: str = ""
     quantity: int = 0
 
@@ -27,7 +27,7 @@ def add_to_cart(username: str, item_name: str, size: str, quantity: int) -> None
 returns specified customer cart as a list of cart_item objects
 """
 def get_cart(username: str) -> list:
-    return [cart_item(entry.item, entry.size, entry.quantity) for entry in models.cart_item.objects.filter(customer=username)]
+    return [cart_item(entry.item.name, entry.size, entry.quantity) for entry in models.cart_item.objects.filter(customer=username)]
 
     
         
@@ -36,9 +36,9 @@ def get_cart(username: str) -> list:
 checks if specified customer cart is avaialable using available function imported from inventory_management module
 and returns true if it is and false otherwise
 """
-def checkout(username: str) -> bool:
+def checkout(username: str, address: str) -> bool:
     entries = models.cart_item.objects.filter(customer=username)
-    cart = [cart_item(entry.name, entry.size, entry.quantity) for entry in entries]
-    record_order(username, cart)
+    cart = [cart_item(entry.item.name, entry.size, entry.quantity) for entry in entries]
+    record_order(username, cart, address)
     entries.delete()
     

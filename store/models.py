@@ -49,4 +49,5 @@ class orderling(models.Model):
 # Table seprifying orders
 class order(models.Model):
     customer = models.ForeignKey('customer', null = True, on_delete = models.SET_NULL)
+    address = models.CharField(max_length = 50, default = "")
     time = models.DateTimeField(null = True)
