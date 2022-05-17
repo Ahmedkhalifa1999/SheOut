@@ -51,7 +51,7 @@ def checkout(request: HttpRequest):
         return redirect('/login_register/')
     if request.method == 'POST':
         product.checkout(request.user.username)
-        return redirect('/index')
+        return redirect('/')
     else:
         return render(request, 'checkout.html')
 
@@ -65,10 +65,10 @@ def login_register(request: HttpRequest):
         if request.POST['which'] == 'register':
             customer.register_user(request.POST['email'], request.POST['password'])
             customer.authenticate_user(request, request.POST['email'], request.POST['password'])
-            return redirect('/index/')
+            return redirect('/')
         else:
             if (customer.authenticate_user(request, request.POST['email'], request.POST['password'])):
-                return redirect('/index/')
+                return redirect('/')
             else:
                 return redirect('/login_register/')
     else:

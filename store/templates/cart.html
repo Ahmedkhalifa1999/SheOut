@@ -167,11 +167,11 @@
                                     </td>
                                     <td class="remove-pr">
                                       <form>
-                                      <button class="remove" type="submit" onclick=""  formaction="{% 'cart.html' %}" formmethod="get" style="color:black; font-weight:bold">X</button>
+                                      <button class="remove" type="submit" onclick=""  formaction="/cart" formmethod="get" style="color:black; font-weight:bold">X</button>
                                      </form>
                                     </td>
                                 </tr>
-                                {% for item in cart-list %}
+                                {% for item in cart %}
                                   <tr>
                                       <td class="thumbnail-img">
                                           <a href="#">
@@ -192,7 +192,7 @@
                                       </td>
                                       <td class="remove-pr">
                                         <form>
-                                        <button class="remove" type="submit" onclick=""  formaction="{% 'cart.html' %}" formmethod="get" style="color:black; font-weight:bold">X</button>
+                                        <button class="remove" type="submit" onclick=""  formaction="/cart" formmethod="get" style="color:black; font-weight:bold">X</button>
                                        </form>
                                       </td>
                                   </tr>
