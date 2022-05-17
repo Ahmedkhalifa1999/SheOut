@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
 
@@ -46,7 +45,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-left:1250px">
-                    <div class="our-link" >
+                    <div class="our-link">
                         <ul>
                             <li><a href="/cart">My Account</a></li>
                             <li><a href="#">Contact Us</a></li>
@@ -66,50 +65,52 @@
             <div class="container">
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                </button>
-                    <a class="navbar-brand" href="/"><img style="width: 130px; height: 55px;" src="{% static 'images/logo.png' %}" class="logo" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
+                        aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/"><img style="width: 130px; height: 55px;"
+                            src="{% static 'images/logo.png' %}" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="navbar1">
-                  <a href="/">Home</a>
-                  <a href="/about">About us</a>
-                  <div class="dropdown">
-                    <button class="dropbtn">Products
-                      <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                      <a href="/shop">Shirts</a>
-                      <a href="/shop">Skirts</a>
-                      <a href="/shop">Pants</a>
-                      <a href="/shop">Dresses</a>
-                      <a href="/shop">Jackets</a>
+                    <a href="/">Home</a>
+                    <a href="/about">About us</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Products
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="/shop">Shirts</a>
+                            <a href="/shop">Skirts</a>
+                            <a href="/shop">Pants</a>
+                            <a href="/shop">Dresses</a>
+                            <a href="/shop">Jackets</a>
+                        </div>
                     </div>
-                  </div>
-                  <div class="dropdown">
-                    <button class="dropbtn">SHOP
-                      <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                      <a href="/cart">Cart</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">SHOP
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="/cart">Cart</a>
 
+                        </div>
                     </div>
-                  </div>
                 </div>
                 <!-- /.navbar-collapse -->
 
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
                     <ul>
-                        <li class="searchtext"><a href="#"><input type="search" id="site-search" name="q"/></a></li>
+                        <li class="searchtext"><a href="#"><input type="search" id="site-search" name="q" /></a></li>
                         <li class="search"><a href="/shop"><i class="fa fa-search"></i></a></li>
                         <li class="side-menu"><a href="/cart">
-						<i class="fa fa-shopping-bag"></i>
+                                <i class="fa fa-shopping-bag"></i>
 
-					</a></li>
+                            </a></li>
                     </ul>
                 </div>
                 <!-- End Atribute Navigation -->
@@ -145,155 +146,84 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
-                    <div class="product-categori">
-                        <div class="search-product">
-                            <form action="#">
+                    <form>
+                        <div class="product-categori">
+                            <div class="search-product">
                                 <input class="form-control" placeholder="Search here..." type="text">
                                 <button type="submit"> <i class="fa fa-search"></i> </button>
-                            </form>
-                        </div>
 
-                        <div class="filter-sidebar-left">
-                            <div class="title-left">
-                                <h3>Categories</h3>
+
                             </div>
-                          <button class="dropdown-btn-side">Clothing
-                            <i class="fa fa-caret-down"></i>
-                          </button>
-                          <div class="dropdown-container">
-                            <a href="/shop">T-Shirts</a>
-                            <a href="/shop">Polo T-Shirts</a>
-                            <a href="/shop">Sweatshirts </a>
 
-                          </div>
-                          <button class="dropdown-btn-side">Footwear
-                            <i class="fa fa-caret-down"></i>
-                          </button>
-                          <div class="dropdown-container">
-                            <a href="/shop" >Sports Shoes <small class="text-muted">(10)</small></a>
-                            <a href="/shop" >Sneakers <small class="text-muted">(20)</small></a>
-                            <a href="/shop" >Formal Shoes <small class="text-muted">(20)</small></a>
-                          </div>
-                          <a href="/shop">Men</a>
-                          <a href="/shop">Accessories</a>
-                          <a href="/shop">Bags</a>
-                        </div>
-
-
-                        <div class="filter-brand-left">
-                            <div class="title-left">
-                                <h3>Price</h3>
+                            <div class="filter-sidebar-left">
+                                <div class="title-left">
+                                    <h3>Categories</h3>
+                                </div>
+                                <a href="#about">Shirts</a>
+                                <a href="#about">Skirts</a>
+                                <a href="#about">Pants</a>
+                                <a href="#services">Dresses</a>
+                                <a href="#clients">Jackets</a>
                             </div>
-                            <div class="brand-box">
-                                <ul>
-                                  <li>
-                                      <div class="radio radio-danger">
-                                          <input name="survey" id="Radios1" value="Yes" type="radio">
-                                          <label for="Radios1"> 60$ </label>
-                                      </div>
-                                  </li>
-                                  <li>
-                                      <div class="radio radio-danger">
-                                          <input name="survey" id="Radios2" value="No" type="radio">
-                                          <label for="Radios2"> 100$ </label>
-                                      </div>
-                                  </li>
-                                  <li>
-                                      <div class="radio radio-danger">
-                                          <input name="survey" id="Radios3" value="declater" type="radio">
-                                          <label for="Radios3"> 150$ </label>
-                                      </div>
-                                  </li>
-                                  <li>
-                                      <div class="radio radio-danger">
-                                          <input name="survey" id="Radios4" value="declater" type="radio">
-                                          <label for="Radios4"> 200$ </label>
-                                      </div>
-                                  </li>
-                                  <li>
-                                      <div class="radio radio-danger">
-                                          <input name="survey" id="Radios5" value="declater" type="radio">
-                                          <label for="Radios5"> 300$ </label>
-                                      </div>
-                                  </li>
-                                  <li>
-                                      <div class="radio radio-danger">
-                                          <input name="survey" id="Radios6" value="declater" type="radio">
-                                          <label for="Radios6"> 400$ </label>
-                                      </div>
-                                  </li>
-                                  <li>
-                                      <div class="radio radio-danger">
-                                          <input name="survey" id="Radios7" value="declater" type="radio">
-                                          <label for="Radios7"> 500$ </label>
-                                      </div>
-                                  </li>
-                                  <li>
-                                      <div class="radio radio-danger">
-                                          <input name="survey" id="Radios8" value="declater" type="radio">
-                                          <label for="Radios8"> 600$ </label>
-                                      </div>
-                                  </li>
-                                  <li>
-                                      <div class="radio radio-danger">
-                                          <input name="survey" id="Radios9" value="declater" type="radio">
-                                          <label for="Radios9"> 700$ </label>
-                                      </div>
-                                  </li>
-                                  <li>
-                                      <div class="radio radio-danger">
-                                          <input name="survey" id="Radios10" value="declater" type="radio">
-                                          <label for="Radios10"> 800$ </label>
-                                      </div>
-                                  </li>
-                                </ul>
-                            </div>
-                        </div>
 
-                    </div>
+
+
+                            <h3>Price</h3>
+                        </div>
+                        <div class="brand-box">
+                            <label for="num">Minimum price: </label>
+                            <input id="num" type="number" name="minprice" min="0" max="1000" step="50">
+                            <label for="num">Maximum price: </label>
+                            <input id="num" type="number" name="maxprice" min="0" max="1000" step="50">
+                        </div>
                 </div>
-                <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
-                    <div class="right-product-box">
-                        <div class="product-item-filter row">
-                            <div class="col-12 col-sm-8 text-center text-sm-left">
 
-                                <p>Showing all {{count}} results</p>
-                            </div>
+            </div>
+            </form>
+        </div>
+        <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
+            <div class="right-product-box">
+                <div class="product-item-filter row">
+                    <div class="col-12 col-sm-8 text-center text-sm-left">
 
-                        </div>
-                        <div class="row product-categorie-box">
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
-                                    <div class="row">
-                                    {% for item in item_list %}
-                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                            <div class="products-single fix">
-                                                <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <p class="new">New</p>
-                                                    </div>
-                                                    <img src={{item.image}} class="img-fluid" alt="Image">
-                                                    <div class="mask-icon">
+                        <p>Showing all {{count}} results</p>
+                    </div>
 
-                                                        <button class="cart" type="submit" formmethod="get" formaction="shop-detail.html">View Item</button>
-                                                    </div>
-                                                </div>
-                                                <div class="why-text">
-                                                    <h4>{{item.name}}</h4>
-                                                    <h5> {{item.price}}</h5>
-                                                </div>
+                </div>
+                <div class="row product-categorie-box">
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+                            <div class="row">
+                                {% for item in item_list %}
+                                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                    <div class="products-single fix">
+                                        <div class="box-img-hover">
+                                            <div class="type-lb">
+                                                <p class="new">New</p>
+                                            </div>
+                                            <img src={{item.image}} class="img-fluid" alt="Image">
+                                            <div class="mask-icon">
+
+                                                <button class="cart" type="submit" formmethod="get"
+                                                    formaction="shop-detail.html">View Item</button>
                                             </div>
                                         </div>
-                                        {% endfor %}
-
+                                        <div class="why-text">
+                                            <h4>{{item.name}}</h4>
+                                            <h5> {{item.price}}</h5>
+                                        </div>
                                     </div>
                                 </div>
-                        </div>
+                                {% endfor %}
 
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- End Shop Page -->
 
@@ -396,13 +326,16 @@
                             <h4>Contact Us</h4>
                             <ul>
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
+                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston
+                                        Street Wichita,<br> KS 67213 </p>
                                 </li>
                                 <li>
-                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
+                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705
+                                            770</a></p>
                                 </li>
                                 <li>
-                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
+                                    <p><i class="fas fa-envelope"></i>Email: <a
+                                            href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
                                 </li>
                             </ul>
                         </div>
@@ -416,7 +349,8 @@
     <!-- Start copyright  -->
     <div class="footer-copyright">
         <p class="footer-company">All Rights Reserved. &copy; 2022 <a href="/">SheOut</a> Design By :
-            <a href="https://html.design/">html design</a></p>
+            <a href="https://html.design/">html design</a>
+        </p>
     </div>
     <!-- End copyright  -->
 
@@ -424,21 +358,21 @@
 
     <!-- ALL JS FILES -->
     <script>
-    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-    var dropdown = document.getElementsByClassName("dropdown-btn-side");
-    var i;
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn-side");
+        var i;
 
-    for (i = 0; i < dropdown.length; i++) {
-      dropdown[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var dropdownContent = this.nextElementSibling;
-        if (dropdownContent.style.display === "block") {
-          dropdownContent.style.display = "none";
-        } else {
-          dropdownContent.style.display = "block";
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
         }
-      });
-    }
     </script>
 </body>
 
