@@ -142,36 +142,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
+                    <form>
                     <div class="product-categori">
                         <div class="search-product">
-                            <form action="#">
+                           
                                 <input class="form-control" placeholder="Search here..." type="text">
                                 <button type="submit"> <i class="fa fa-search"></i> </button>
-                            </form>
+                            
                         </div>
 
                         <div class="filter-sidebar-left">
                             <div class="title-left">
                                 <h3>Categories</h3>
                             </div>
-                          <button class="dropdown-btn-side">Clothing
-                            <i class="fa fa-caret-down"></i>
-                          </button>
-                          <div class="dropdown-container">
-                            <a href="#">T-Shirts</a>
-                            <a href="#">Polo T-Shirts</a>
-                            <a href="#">Sweatshirts </a>
-
-                          </div>
-                          <button class="dropdown-btn-side">Footwear
-                            <i class="fa fa-caret-down"></i>
-                          </button>
-                          <div class="dropdown-container">
-                            <a href="#" >Sports Shoes <small class="text-muted">(10)</small></a>
-                            <a href="#" >Sneakers <small class="text-muted">(20)</small></a>
-                            <a href="#" >Formal Shoes <small class="text-muted">(20)</small></a>
-                          </div>
+                         <a href="#about">Shirts</a>
                           <a href="#about">Skirts</a>
+                            <a href="#about">Pants</a>
                           <a href="#services">Dresses</a>
                           <a href="#clients">Jackets</a>
                         </div>
@@ -182,72 +168,16 @@
                                 <h3>Price</h3>
                             </div>
                             <div class="brand-box">
-                                <ul>
-                                    <li>
-                                        <div class="radio radio-danger">
-                                            <input name="survey" id="Radios1" value="Yes" type="radio">
-                                            <label for="Radios1"> 60$ </label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="radio radio-danger">
-                                            <input name="survey" id="Radios2" value="No" type="radio">
-                                            <label for="Radios2"> 100$ </label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="radio radio-danger">
-                                            <input name="survey" id="Radios3" value="declater" type="radio">
-                                            <label for="Radios3"> 150$ </label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="radio radio-danger">
-                                            <input name="survey" id="Radios4" value="declater" type="radio">
-                                            <label for="Radios4"> 200$ </label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="radio radio-danger">
-                                            <input name="survey" id="Radios5" value="declater" type="radio">
-                                            <label for="Radios5"> 300$ </label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="radio radio-danger">
-                                            <input name="survey" id="Radios6" value="declater" type="radio">
-                                            <label for="Radios6"> 400$ </label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="radio radio-danger">
-                                            <input name="survey" id="Radios7" value="declater" type="radio">
-                                            <label for="Radios7"> 500$ </label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="radio radio-danger">
-                                            <input name="survey" id="Radios8" value="declater" type="radio">
-                                            <label for="Radios8"> 600$ </label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="radio radio-danger">
-                                            <input name="survey" id="Radios9" value="declater" type="radio">
-                                            <label for="Radios9"> 700$ </label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="radio radio-danger">
-                                            <input name="survey" id="Radios10" value="declater" type="radio">
-                                            <label for="Radios10"> 800$ </label>
-                                        </div>
-                                    </li>
-                                </ul>
+                                <label for="num">Minimum price: </label>
+        <input id="num" type="number" name="minprice" min="0" max="1000" step="50">
+    <label for="num">Maximum price: </label>
+        <input id="num" type="number" name="maxprice" min="0" max="1000" step="50">
                             </div>
                         </div>
 
                     </div>
+                        </form>
+                </div>
                 </div>
                 <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
                     <div class="right-product-box">
