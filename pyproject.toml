@@ -1,0 +1,14 @@
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = ["store/migrations", "docs"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "DJ"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["store", "SheOut"]
+
+[tool.coverage.run]
+source = ["store", "SheOut"]
+omit = ["store/migrations/*", "store/tests/*", "*/wsgi.py", "*/asgi.py", "manage.py"]
