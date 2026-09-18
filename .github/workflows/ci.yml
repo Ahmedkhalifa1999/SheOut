@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    env:
+      DJANGO_DEBUG: "0"
+      DJANGO_SECRET_KEY: ci-only-secret-key
+      DJANGO_ALLOWED_HOSTS: localhost,127.0.0.1,testserver
+      DJANGO_SECURE_HSTS_SECONDS: "3600"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - run: pip install -r requirements-dev.txt
+      - name: Lint
+        run: ruff check . && ruff format --check .
+      - name: Django system checks (deployment settings)
+        run: python manage.py check --deploy --fail-level WARNING
+      - name: Migrations match models
+        run: python manage.py makemigrations --check --dry-run
+      - name: Tests with coverage
+        run: |
+          coverage run manage.py test --noinput
+          coverage report --fail-under=85
+      - name: Static files collect
+        run: python manage.py collectstatic --noinput
