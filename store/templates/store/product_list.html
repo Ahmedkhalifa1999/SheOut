@@ -1,0 +1,89 @@
+{% extends "store/base.html" %}
+{% block title %}Shop{% endblock %}
+
+{% block content %}
+{% include "store/includes/title_box.html" with title="Shop" %}
+
+<div class="shop-box-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-sm-12 sidebar-shop-left">
+                <form method="get" action="{% url 'store:product_list' %}" id="filter-form">
+                    <div class="product-categori">
+                        <div class="search-product">
+                            <input class="form-control" placeholder="Search here..." type="text" name="q" value="{{ form.q.value|default:'' }}">
+                            <button type="submit" aria-label="Search"><i class="fa fa-search"></i></button>
+                        </div>
+                        <div class="filter-sidebar-left">
+                            <div class="title-left"><h3>Categories</h3></div>
+                            <div class="list-group list-group-flush">
+                                <a class="list-group-item list-group-item-action{% if not form.category.value %} active{% endif %}" href="{% url 'store:product_list' %}{% if form.q.value %}?q={{ form.q.value|urlencode }}{% endif %}">All</a>
+                                {% for value, label in categories %}
+                                <a class="list-group-item list-group-item-action{% if form.category.value == value %} active{% endif %}" href="{% url 'store:product_list' %}?category={{ value|urlencode }}{% if form.q.value %}&q={{ form.q.value|urlencode }}{% endif %}">{{ label }}</a>
+                                {% endfor %}
+                            </div>
+                            <input type="hidden" name="category" value="{{ form.category.value|default:'' }}">
+                        </div>
+                        <div class="filter-price-left mt-4">
+                            <div class="title-left"><h3>Price (EGP)</h3></div>
+                            <div class="form-group">
+                                <label for="min_price">Minimum</label>
+                                <input class="form-control" id="min_price" type="number" name="min_price" min="0" step="1" value="{{ form.min_price.value|default:'' }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="max_price">Maximum</label>
+                                <input class="form-control" id="max_price" type="number" name="max_price" min="0" step="1" value="{{ form.max_price.value|default:'' }}">
+                            </div>
+                            <button type="submit" class="btn btn-dark btn-sm">Apply</button>
+                            <a href="{% url 'store:product_list' %}" class="btn btn-link btn-sm">Reset</a>
+                        </div>
+                        {% if form.errors %}
+                        <div class="alert alert-warning mt-3">{{ form.non_field_errors }}{% for field in form %}{{ field.errors }}{% endfor %}</div>
+                        {% endif %}
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-xl-9 col-lg-9 col-sm-12 shop-content-right">
+                <div class="right-product-box">
+                    <div class="product-item-filter row">
+                        <div class="col-12 col-sm-8 text-center text-sm-left">
+                            <p>Showing {{ page.object_list|length }} of {{ total }} product{{ total|pluralize }}</p>
+                        </div>
+                    </div>
+                    <div class="row product-categorie-box">
+                        <div class="tab-content w-100">
+                            <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+                                <div class="row">
+                                    {% for product in page %}
+                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                        {% include "store/includes/product_card.html" %}
+                                    </div>
+                                    {% empty %}
+                                    <div class="col-12">
+                                        <p>No products match your filters. <a href="{% url 'store:product_list' %}">Show everything</a>.</p>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if page.has_other_pages %}
+                    <nav aria-label="Product pages">
+                        <ul class="pagination justify-content-center">
+                            {% if page.has_previous %}
+                            <li class="page-item"><a class="page-link" href="?{% if querystring %}{{ querystring }}&{% endif %}page={{ page.previous_page_number }}">Previous</a></li>
+                            {% endif %}
+                            <li class="page-item disabled"><span class="page-link">Page {{ page.number }} of {{ page.paginator.num_pages }}</span></li>
+                            {% if page.has_next %}
+                            <li class="page-item"><a class="page-link" href="?{% if querystring %}{{ querystring }}&{% endif %}page={{ page.next_page_number }}">Next</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

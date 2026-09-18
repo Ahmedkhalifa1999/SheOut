@@ -1,0 +1,42 @@
+{% extends "store/base.html" %}
+{% block title %}Order #{{ order.pk }}{% endblock %}
+
+{% block content %}
+{% url 'store:order_list' as orders_url %}
+{% include "store/includes/title_box.html" with title=title parent_url=orders_url parent_label="My orders" %}
+
+<div class="cart-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="table-main table-responsive">
+                    <table class="table">
+                        <thead><tr><th>Product</th><th>Size</th><th>Unit price</th><th>Quantity</th><th>Total</th></tr></thead>
+                        <tbody>
+                            {% for line in order.lines.all %}
+                            <tr>
+                                <td><a href="{{ line.product.get_absolute_url }}">{{ line.product.name }}</a></td>
+                                <td>{{ line.get_size_display }}</td>
+                                <td>{{ line.unit_price }} EGP</td>
+                                <td>{{ line.quantity }}</td>
+                                <td>{{ line.line_total }} EGP</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="order-box">
+                    <h3>Order #{{ order.pk }}</h3>
+                    <p><strong>Placed:</strong> {{ order.created_at|date:"Y-m-d H:i" }}</p>
+                    <p><strong>Status:</strong> {{ order.get_status_display }}</p>
+                    <p><strong>Deliver to:</strong><br>{{ order.address|linebreaksbr }}</p>
+                    <hr>
+                    <div class="total-row"><span>Total</span><span class="amount">{{ order.total }} EGP</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{# One product tile; expects `product`. #}
+<div class="products-single fix">
+    <div class="box-img-hover">
+        {% if not product.in_stock %}
+        <div class="type-lb"><p class="sale">Sold out</p></div>
+        {% endif %}
+        <a href="{{ product.get_absolute_url }}">
+            <img src="{{ product.image_url }}" class="img-fluid" alt="{{ product.name }}">
+        </a>
+        <div class="mask-icon">
+            <ul>
+                <li><a href="{{ product.get_absolute_url }}" title="View {{ product.name }}"><i class="fa fa-eye"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="why-text">
+        <h4><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h4>
+        <h5>{{ product.price }} EGP</h5>
+    </div>
+</div>

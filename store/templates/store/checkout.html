@@ -1,0 +1,50 @@
+{% extends "store/base.html" %}
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+{% url 'store:cart' as cart_url %}
+{% include "store/includes/title_box.html" with title="Checkout" parent_url=cart_url parent_label="Cart" %}
+
+<div class="cart-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-lg-6 mb-3">
+                <div class="checkout-address">
+                    <div class="title-left"><h3>Delivery address</h3></div>
+                    <form method="post" action="{% url 'store:checkout' %}" novalidate>
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="{{ form.address.id_for_label }}">Address *</label>
+                            {{ form.address }}
+                            {% for error in form.address.errors %}<div class="text-danger small">{{ error }}</div>{% endfor %}
+                        </div>
+                        <p class="small text-muted">Payment: cash on delivery. Shipping: standard, free.</p>
+                        <button type="submit" class="btn btn-danger btn-lg">Place order</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-6 mb-3">
+                <div class="odr-box">
+                    <div class="title-left"><h3>Your order</h3></div>
+                    <div class="rounded p-2 bg-light">
+                        {% for item in items %}
+                        <div class="media mb-2 border-bottom">
+                            <div class="media-body">
+                                <a href="{{ item.product.get_absolute_url }}">{{ item.product.name }}</a> ({{ item.get_size_display }})
+                                <div class="small text-muted">Price: {{ item.product.price }} EGP <span class="mx-2">|</span> Qty: {{ item.quantity }} <span class="mx-2">|</span> Subtotal: {{ item.line_total }} EGP</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="order-box mt-3">
+                    <div class="total-row font-weight-normal"><span>Sub total</span><span>{{ total }} EGP</span></div>
+                    <div class="total-row font-weight-normal"><span>Shipping</span><span>Free</span></div>
+                    <hr>
+                    <div class="total-row"><span>Grand total</span><span class="amount">{{ total }} EGP</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

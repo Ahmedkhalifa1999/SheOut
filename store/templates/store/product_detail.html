@@ -1,0 +1,54 @@
+{% extends "store/base.html" %}
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+{% url 'store:product_list' as shop_url %}
+{% include "store/includes/title_box.html" with title=product.name parent_url=shop_url parent_label="Shop" %}
+
+<div class="shop-detail-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-5 col-md-6">
+                <img class="d-block w-100" src="{{ product.image_url }}" alt="{{ product.name }}">
+            </div>
+            <div class="col-xl-7 col-lg-7 col-md-6">
+                <div class="single-product-details">
+                    <h2>{{ product.name }}</h2>
+                    <h5>{{ product.price }} EGP</h5>
+                    <p class="text-muted">{{ product.get_category_display }}</p>
+                    {% if product.in_stock %}
+                    <p><span class="badge badge-success">In stock</span> {{ product.stock }} available</p>
+                    {% else %}
+                    <p><span class="badge badge-secondary">Sold out</span></p>
+                    {% endif %}
+
+                    {% if product.in_stock %}
+                    <div class="price-box-bar">
+                        <div class="cart-and-bay-btn">
+                            <form method="post" action="{% url 'store:cart_add' product.slug %}">
+                                {% csrf_token %}
+                                <div class="form-row align-items-end">
+                                    <div class="form-group col-auto">
+                                        <label for="{{ form.size.id_for_label }}">Size</label>
+                                        {{ form.size }}
+                                    </div>
+                                    <div class="form-group col-auto">
+                                        <label for="{{ form.quantity.id_for_label }}">Quantity</label>
+                                        {{ form.quantity }}
+                                    </div>
+                                </div>
+                                {% if user.is_authenticated %}
+                                <button type="submit" class="btn btn-danger btn-lg">Add to cart</button>
+                                {% else %}
+                                <a class="btn btn-danger btn-lg" href="{% url 'store:login' %}?next={{ request.path|urlencode }}">Log in to buy</a>
+                                {% endif %}
+                            </form>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

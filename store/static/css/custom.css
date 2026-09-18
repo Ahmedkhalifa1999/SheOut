@@ -1,2 +1,32 @@
+/* SheOut overrides on top of the html.design theme. */
 
-/** ADD YOUR AWESOME CODES HERE **/
+/* Category tiles on the home page use mixed image sizes; give them one height. */
+.shop-cat-box img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+/* Product cards: keep every image the same height so the grid lines up. */
+.products-single .box-img-hover img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+/* Order totals: plain flex row, label left and amount right. */
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-weight: 700;
+}
+.total-row .amount {
+    color: #d33b33;
+    font-size: 1.25rem;
+}
+
+/* Cart page spacing above the summary box. */
+.cart-summary {
+    margin-top: 1.5rem;
+}

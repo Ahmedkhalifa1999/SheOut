@@ -1,0 +1,78 @@
+{% extends "store/base.html" %}
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+{% url 'store:product_list' as shop_url %}
+{% include "store/includes/title_box.html" with title="Cart" parent_url=shop_url parent_label="Shop" %}
+
+<div class="cart-box-main">
+    <div class="container">
+        {% if items %}
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-main table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Product</th>
+                                <th>Size</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in items %}
+                            <tr>
+                                <td class="thumbnail-img">
+                                    <a href="{{ item.product.get_absolute_url }}"><img class="img-fluid" src="{{ item.product.image_url }}" alt="{{ item.product.name }}"></a>
+                                </td>
+                                <td class="name-pr"><a href="{{ item.product.get_absolute_url }}">{{ item.product.name }}</a></td>
+                                <td>{{ item.get_size_display }}</td>
+                                <td class="price-pr"><p>{{ item.product.price }} EGP</p></td>
+                                <td class="quantity-box">
+                                    <form method="post" action="{% url 'store:cart_update' item.pk %}" class="form-inline">
+                                        {% csrf_token %}
+                                        <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="20" step="1" class="form-control form-control-sm" style="width: 5em;" aria-label="Quantity for {{ item.product.name }}">
+                                        <button type="submit" class="btn btn-sm btn-dark ml-1">Update</button>
+                                    </form>
+                                </td>
+                                <td class="total-pr"><p>{{ item.line_total }} EGP</p></td>
+                                <td class="remove-pr">
+                                    <form method="post" action="{% url 'store:cart_remove' item.pk %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-sm btn-link text-danger" aria-label="Remove {{ item.product.name }}"><i class="fas fa-times"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-lg-8 col-sm-12"></div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="order-box cart-summary">
+                    <h3>Order summary</h3>
+                    <div class="total-row"><span>Total</span><span class="amount">{{ total }} EGP</span></div>
+                    <hr>
+                    <a class="btn btn-danger btn-lg btn-block" href="{% url 'store:checkout' %}">Checkout</a>
+                    <a class="btn btn-link btn-block" href="{% url 'store:product_list' %}">Continue shopping</a>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="row">
+            <div class="col-12 text-center py-5">
+                <p>Your cart is empty.</p>
+                <a class="btn btn-danger" href="{% url 'store:product_list' %}">Go to the shop</a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

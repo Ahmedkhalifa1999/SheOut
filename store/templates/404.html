@@ -1,0 +1,9 @@
+{% extends "store/base.html" %}
+{% block title %}Page not found{% endblock %}
+{% block content %}
+<div class="container text-center py-5">
+    <h1>Page not found</h1>
+    <p>The page you asked for does not exist or was moved.</p>
+    <a class="btn btn-danger" href="{% url 'store:index' %}">Back to the home page</a>
+</div>
+{% endblock %}

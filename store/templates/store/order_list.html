@@ -1,0 +1,31 @@
+{% extends "store/base.html" %}
+{% block title %}My orders{% endblock %}
+
+{% block content %}
+{% include "store/includes/title_box.html" with title="My orders" %}
+
+<div class="cart-box-main">
+    <div class="container">
+        {% if orders %}
+        <div class="table-main table-responsive">
+            <table class="table">
+                <thead><tr><th>Order</th><th>Date</th><th>Items</th><th>Total</th><th>Status</th></tr></thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <td><a href="{{ order.get_absolute_url }}">#{{ order.pk }}</a></td>
+                        <td>{{ order.created_at|date:"Y-m-d H:i" }}</td>
+                        <td>{{ order.lines.count }}</td>
+                        <td>{{ order.total }} EGP</td>
+                        <td>{{ order.get_status_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p class="text-center py-5">You have not placed any orders yet. <a href="{% url 'store:product_list' %}">Start shopping</a>.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

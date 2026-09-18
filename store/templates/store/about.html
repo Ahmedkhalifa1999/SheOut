@@ -1,0 +1,22 @@
+{% extends "store/base.html" %}
+{% load static %}
+{% block title %}About us{% endblock %}
+
+{% block content %}
+{% include "store/includes/title_box.html" with title="About us" %}
+
+<div class="about-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="banner-frame"><img class="img-fluid" src="{% static 'images/about-img.jpg' %}" alt="SheOut store"></div>
+            </div>
+            <div class="col-lg-6">
+                <h2 class="noo-sh-title"><span>SheOut STORE</span></h2>
+                <p>SheOut STORE caters to thoughtful shoppers who appreciate unique designs and top quality pieces you just can't find anywhere else. We are constantly curating fresh new collections and looking for the next big thing our customers will love.</p>
+                <a class="btn btn-danger" href="{% url 'store:product_list' %}">Browse the shop</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
